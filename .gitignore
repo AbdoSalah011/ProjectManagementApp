@@ -1,0 +1,84 @@
+## .NET / Visual Studio build artifacts
+[Bb]in/
+[Oo]bj/
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+[Aa][Rr][Mm]/
+[Aa][Rr][Mm]64/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+## Visual Studio / Rider / VS Code folders
+.vs/
+.vscode/
+.idea/
+
+## NuGet
+*.nupkg
+**/[Pp]ackages/*
+!**/[Pp]ackages/build/
+*.nuget.props
+*.nuget.targets
+
+## Build results
+[Aa]rtifacts/
+*_i.c
+*_p.c
+*_h.h
+*.ilk
+*.meta
+*.obj
+*.pch
+*.pdb
+*.pgc
+*.pgd
+*.rsp
+*.sbr
+*.tlb
+*.tli
+*.tlh
+*.tmp
+*.tmp_proj
+*_wpftmp.csproj
+*.log
+*.vspscc
+*.vssscc
+.builds
+*.pidb
+*.svclog
+*.scc
+
+## Test results
+[Tt]est[Rr]esult*/
+[Bb]uild[Ll]og.*
+*.VisualState.xml
+TestResult.xml
+nunit-*.xml
+
+## ASP.NET Core specific
+wwwroot/
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+## Local environment / secrets — IMPORTANT for this project
+appsettings.Development.json
+appsettings.Local.json
+*.env
+secrets.json
+
+## Logs (Serilog file sink output)
+Logs/
+*.log
+
+## EF Core
+## Migrations are intentionally NOT ignored — they must be committed.
+## (No entry needed here; just don't add Migrations/ above by mistake.)
+
+## OS-specific junk
+.DS_Store
+Thumbs.db
