@@ -1,0 +1,19 @@
+<Solution>
+  <Folder Name="/docs/" />
+  <Folder Name="/docs/postman/" />
+  <Folder Name="/Solution Items/">
+    <File Path=".editorconfig" />
+    <File Path=".gitignore" />
+    <File Path="README.md" />
+  </Folder>
+  <Folder Name="/src/">
+    <Project Path="ProjectManagement.API/ProjectManagement.API.csproj" Id="15b5ab7f-5b77-4793-9470-ed762f1f9fbe" />
+    <Project Path="ProjectManagement.Application/ProjectManagement.Application.csproj" Id="8af581d0-2bcf-46a0-8ea0-b79b724dc22f" />
+    <Project Path="ProjectManagement.Domain/ProjectManagement.Domain.csproj" Id="28b1c1aa-782b-479f-a9b5-1dc01913240b" />
+    <Project Path="ProjectManagement.Infrastructure/ProjectManagement.Infrastructure.csproj" Id="1c84b3ed-d891-47fc-93a9-f2e143d8e70c" />
+    <Project Path="ProjectManagement.Persistence/ProjectManagement.Persistence.csproj" Id="9eb7c157-bf39-4c26-95b6-b521211e3447" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="ProjectManagement.UnitTests/ProjectManagement.UnitTests.csproj" Id="2f074bdb-8341-4c38-b768-122106b99a9f" />
+  </Folder>
+</Solution>

@@ -1,0 +1,20 @@
+﻿global using Microsoft.AspNetCore.Identity;
+global using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+global using Microsoft.EntityFrameworkCore;
+global using Microsoft.EntityFrameworkCore.Design;
+global using Microsoft.EntityFrameworkCore.Diagnostics;
+global using Microsoft.EntityFrameworkCore.Metadata.Builders;
+global using Microsoft.EntityFrameworkCore.Storage;
+global using Microsoft.Extensions.Configuration;
+global using Microsoft.Extensions.DependencyInjection;
+global using ProjectManagement.Application.Common.Interfaces;
+global using ProjectManagement.Application.Common.Models;
+global using ProjectManagement.Domain.Common;
+global using ProjectManagement.Domain.Constants;
+global using ProjectManagement.Domain.Entities;
+global using ProjectManagement.Domain.Enums;
+global using ProjectManagement.Persistence.Configurations;
+global using ProjectManagement.Persistence.Context;
+global using ProjectManagement.Persistence.Repositories;
+global using ProjectManagement.Persistence.Seed;
+
