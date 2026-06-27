@@ -1,0 +1,424 @@
+{
+  "info": {
+    "_postman_id": "402d6ec8-2a69-4be0-a64f-473b9008a49b",
+    "name": "Project Management APIs",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "45578686",
+    "_collection_link": "https://go.postman.co/collection/45578686-402d6ec8-2a69-4be0-a64f-473b9008a49b?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Auth",
+      "item": [
+        {
+          "name": "register",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"firstName\": \"Ahmed\",\r\n  \"lastName\": \"Khalid\",\r\n  \"email\": \"ahmedkhalid@gmail.com\",\r\n  \"password\": \"Ahmed@1234\",\r\n  \"isAdmin\": false\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://localhost:7070/api/v1/auth/register",
+              "protocol": "https",
+              "host": [
+                "localhost"
+              ],
+              "port": "7070",
+              "path": [
+                "api",
+                "v1",
+                "auth",
+                "register"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "login",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"email\": \"ahmedkhalid@gmail.com\",\r\n  \"password\": \"Ahmed@1234\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://localhost:7070/api/v1/auth/login",
+              "protocol": "https",
+              "host": [
+                "localhost"
+              ],
+              "port": "7070",
+              "path": [
+                "api",
+                "v1",
+                "auth",
+                "login"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "refreshToken",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"token\": \"string\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://localhost:7070/api/v1/auth/refreshtoken",
+              "protocol": "https",
+              "host": [
+                "localhost"
+              ],
+              "port": "7070",
+              "path": [
+                "api",
+                "v1",
+                "auth",
+                "refreshtoken"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Projects",
+      "item": [
+        {
+          "name": "createNewProject",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"name\": \"Mockup Project\",\r\n  \"description\": \"this is the first Project on this website\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://localhost:7070/api/v1/projects",
+              "protocol": "https",
+              "host": [
+                "localhost"
+              ],
+              "port": "7070",
+              "path": [
+                "api",
+                "v1",
+                "projects"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "getAllProjects",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"name\": \"string\",\r\n  \"description\": \"string\"\r\n}"
+            },
+            "url": {
+              "raw": "https://localhost:7070/api/v1/projects",
+              "protocol": "https",
+              "host": [
+                "localhost"
+              ],
+              "port": "7070",
+              "path": [
+                "api",
+                "v1",
+                "projects"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "getProjectById",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"name\": \"string\",\r\n  \"description\": \"string\"\r\n}"
+            },
+            "url": {
+              "raw": "https://localhost:7070/api/v1/projects",
+              "protocol": "https",
+              "host": [
+                "localhost"
+              ],
+              "port": "7070",
+              "path": [
+                "api",
+                "v1",
+                "projects"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "updateProject",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"name\": \"string\",\r\n  \"description\": \"string\"\r\n}"
+            },
+            "url": {
+              "raw": "https://localhost:7070/api/v1/projects?id",
+              "protocol": "https",
+              "host": [
+                "localhost"
+              ],
+              "port": "7070",
+              "path": [
+                "api",
+                "v1",
+                "projects"
+              ],
+              "query": [
+                {
+                  "key": "id",
+                  "value": null,
+                  "type": "text"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "deleteProject",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"name\": \"string\",\r\n  \"description\": \"string\"\r\n}"
+            },
+            "url": {
+              "raw": "https://localhost:7070/api/v1/projects?id",
+              "protocol": "https",
+              "host": [
+                "localhost"
+              ],
+              "port": "7070",
+              "path": [
+                "api",
+                "v1",
+                "projects"
+              ],
+              "query": [
+                {
+                  "key": "id",
+                  "value": null,
+                  "type": "text"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Tasks",
+      "item": [
+        {
+          "name": "createTask",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"title\": \"string\",\r\n  \"description\": \"string\",\r\n  \"dueDate\": \"2026-06-27T10:26:49.043Z\",\r\n  \"priority\": 1,\r\n  \"projectId\": \"string\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://localhost:7070/api/v1/tasks",
+              "protocol": "https",
+              "host": [
+                "localhost"
+              ],
+              "port": "7070",
+              "path": [
+                "api",
+                "v1",
+                "tasks"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "updateTaskStatus",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"name\": \"string\",\r\n  \"description\": \"string\"\r\n}"
+            },
+            "url": {
+              "raw": "https://localhost:7070/api/v1/tasks/id/status?status",
+              "protocol": "https",
+              "host": [
+                "localhost"
+              ],
+              "port": "7070",
+              "path": [
+                "api",
+                "v1",
+                "tasks",
+                "id",
+                "status"
+              ],
+              "query": [
+                {
+                  "key": "status",
+                  "value": null,
+                  "type": "text"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "getTasksByProject",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://localhost:7070/api/v1/tasks/by-project/{projectId}?pageNumber&pageSize",
+              "protocol": "https",
+              "host": [
+                "localhost"
+              ],
+              "port": "7070",
+              "path": [
+                "api",
+                "v1",
+                "tasks",
+                "by-project",
+                "{projectId}"
+              ],
+              "query": [
+                {
+                  "key": "pageNumber",
+                  "value": null
+                },
+                {
+                  "key": "pageSize",
+                  "value": null
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "deleteTask",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"name\": \"string\",\r\n  \"description\": \"string\"\r\n}"
+            },
+            "url": {
+              "raw": "https://localhost:7070/api/v1/tasks/?id",
+              "protocol": "https",
+              "host": [
+                "localhost"
+              ],
+              "port": "7070",
+              "path": [
+                "api",
+                "v1",
+                "tasks",
+                ""
+              ],
+              "query": [
+                {
+                  "key": "id",
+                  "value": null,
+                  "type": "text"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}

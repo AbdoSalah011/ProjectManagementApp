@@ -2,7 +2,7 @@
 
 A production-quality REST API for managing Projects and Tasks, built with **.NET 9**, **Clean Architecture**, **CQRS + MediatR**, and **ASP.NET Core Identity + JWT Authentication**.
 
-This was built as a technical assessment for a Backend .NET Developer position. All bonus requirements were implemented: CQRS/MediatR, Unit Tests, Generic Response Wrapper, Role-Based Authorization, and URL-segment API Versioning.
+This was built as a technical assessment for a Backend .NET Developer position. Most of bonus requirements were implemented: CQRS/MediatR, Generic Response Wrapper, and URL-segment API Versioning.
 
 ---
 
@@ -31,8 +31,6 @@ This was built as a technical assessment for a Backend .NET Developer position. 
 | Validation | FluentValidation (via MediatR pipeline behavior) |
 | Auth | ASP.NET Core Identity, JWT Bearer + Refresh Tokens |
 | API Versioning | Asp.Versioning (URL segment: `/api/v1/...`) |
-| Logging | Serilog (console + rolling file sink) |
-| Testing | xUnit, Moq, FluentAssertions |
 | API Docs | Swagger / OpenAPI (with JWT bearer support) |
 
 ---
