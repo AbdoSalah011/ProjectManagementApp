@@ -12,6 +12,7 @@ global using ProjectManagement.Application.Common.Interfaces;
 global using ProjectManagement.Application.Common.Mappings;
 global using ProjectManagement.Application.Common.Models;
 global using ProjectManagement.Application.Common.Security;
+global using ProjectManagement.Application.Features.Auth.DTOs;
 global using ProjectManagement.Application.Features.Projects.DTOs;
 global using ProjectManagement.Application.Features.Tasks.DTOs;
 global using ProjectManagement.Domain.Constants;

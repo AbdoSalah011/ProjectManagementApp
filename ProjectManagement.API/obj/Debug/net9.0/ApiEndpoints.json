@@ -94,7 +94,7 @@
     "Parameters": [
       {
         "Name": "id",
-        "Type": "System.String",
+        "Type": "System.Guid",
         "IsRequired": true
       }
     ],
@@ -110,7 +110,7 @@
     "Parameters": [
       {
         "Name": "id",
-        "Type": "System.String",
+        "Type": "System.Guid",
         "IsRequired": true
       },
       {
@@ -131,7 +131,7 @@
     "Parameters": [
       {
         "Name": "id",
-        "Type": "System.String",
+        "Type": "System.Guid",
         "IsRequired": true
       }
     ],
@@ -163,7 +163,7 @@
     "Parameters": [
       {
         "Name": "taskId",
-        "Type": "System.String",
+        "Type": "System.Guid",
         "IsRequired": true
       }
     ],
@@ -179,7 +179,7 @@
     "Parameters": [
       {
         "Name": "taskId",
-        "Type": "System.String",
+        "Type": "System.Guid",
         "IsRequired": true
       },
       {
@@ -200,7 +200,7 @@
     "Parameters": [
       {
         "Name": "projectId",
-        "Type": "System.String",
+        "Type": "System.Guid",
         "IsRequired": true
       },
       {

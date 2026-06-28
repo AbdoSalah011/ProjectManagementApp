@@ -13,9 +13,9 @@
         private ClaimsPrincipal? User => _context.HttpContext?.User;
 
         public Guid UserId =>
-            Guid.Parse(
-                User?
-                .FindFirstValue(ClaimTypes.NameIdentifier)!);
+            Guid.TryParse(User?.FindFirstValue(ClaimTypes.NameIdentifier), out var userId)
+                ? userId
+                : Guid.Empty;
 
         public string Email =>
             User?

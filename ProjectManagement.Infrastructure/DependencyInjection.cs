@@ -1,6 +1,4 @@
-﻿using ProjectManagement.Infrastructure.Services;
-
-namespace ProjectManagement.Infrastructure
+﻿namespace ProjectManagement.Infrastructure
 {
     public static class DependencyInjection
     {
@@ -21,11 +19,9 @@ namespace ProjectManagement.Infrastructure
 
             services.AddScoped<IJwtService, JwtService>();
 
-            services.Configure<JwtSettings>(configuration.GetSection("JwtSettings"));
 
             // Register JWT Services & Dependecies
-            services.Configure<JwtSettings>(options =>
-                configuration.GetSection("JwtSettings"));
+            services.Configure<JwtSettings>(configuration.GetSection("JwtSettings"));
 
             services.AddAuthentication(options =>
             {

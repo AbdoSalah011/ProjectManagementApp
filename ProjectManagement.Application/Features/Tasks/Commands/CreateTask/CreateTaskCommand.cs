@@ -5,5 +5,5 @@
         string? Description,
         DateTime DueDate,
         TaskPriority Priority,
-        string ProjectId) : IRequest<TaskDto>;
+        Guid ProjectId) : IRequest<TaskDto>;
 }

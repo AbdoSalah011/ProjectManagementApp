@@ -13,7 +13,7 @@
 
         public async Task<Unit> Handle(DeleteProjectCommand request, CancellationToken cancellationToken)
         {
-            var project = await _unitOfWork.Projects.GetByIdAsync(Guid.Parse(request.Id))
+            var project = await _unitOfWork.Projects.GetByIdAsync(request.Id)
                 ?? throw new NotFoundException(nameof(Project), request.Id);
 
             AuthorizationHelper.EnsureCanAccessProject(project, _currentUser.UserId!, _currentUser.IsAdmin);

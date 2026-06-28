@@ -1,4 +1,4 @@
 ﻿namespace ProjectManagement.Application.Features.Auth.Commands.Login
 {
-    public record LoginCommand(string Email, string Password) : IRequest<LoginResponse>;
+    public record LoginCommand(string Email, string Password) : IRequest<AuthResponseDto>;
 }

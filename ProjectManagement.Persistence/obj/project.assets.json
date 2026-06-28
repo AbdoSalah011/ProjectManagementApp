@@ -20,6 +20,22 @@
           }
         }
       },
+      "AutoMapper.Extensions.ExpressionMapping/4.1.3": {
+        "type": "package",
+        "dependencies": {
+          "AutoMapper": "[10.1.1, 11.0.0)"
+        },
+        "compile": {
+          "lib/netstandard2.0/AutoMapper.Extensions.ExpressionMapping.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/AutoMapper.Extensions.ExpressionMapping.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Azure.Core/1.38.0": {
         "type": "package",
         "dependencies": {
@@ -1635,6 +1651,28 @@
           "buildTransitive/Mono.TextTemplating.targets": {}
         }
       },
+      "ReHackt.Queryable.AutoMapperExtensions/1.8.2": {
+        "type": "package",
+        "dependencies": {
+          "AutoMapper.Extensions.ExpressionMapping": "4.1.3",
+          "ReHackt.Queryable.Extensions": "1.8.2"
+        },
+        "compile": {
+          "lib/netstandard2.0/ReHackt.Queryable.AutoMapperExtensions.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/ReHackt.Queryable.AutoMapperExtensions.dll": {}
+        }
+      },
+      "ReHackt.Queryable.Extensions/1.8.2": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/ReHackt.Queryable.Extensions.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/ReHackt.Queryable.Extensions.dll": {}
+        }
+      },
       "System.Buffers/4.6.0": {
         "type": "package",
         "compile": {
@@ -2310,7 +2348,8 @@
           "FluentValidation.DependencyInjectionExtensions": "9.5.4",
           "MediatR": "12.1.1",
           "Microsoft.Extensions.DependencyInjection.Abstractions": "9.0.17",
-          "ProjectManagement.Domain": "1.0.0"
+          "ProjectManagement.Domain": "1.0.0",
+          "ReHackt.Queryable.AutoMapperExtensions": "1.8.2"
         },
         "compile": {
           "bin/placeholder/ProjectManagement.Application.dll": {}
@@ -2353,6 +2392,21 @@
         "lib/net9.0/AutoMapper.xml",
         "lib/netstandard2.0/AutoMapper.dll",
         "lib/netstandard2.0/AutoMapper.xml"
+      ]
+    },
+    "AutoMapper.Extensions.ExpressionMapping/4.1.3": {
+      "sha512": "qVauR+Y4KqvjGVC9x9WHtEZsngJZSklHl1p4ngV5Zj7FU/CWYO55t4XlCmh3NQHQjZIr+rY5uMz8xHy79l4CNw==",
+      "type": "package",
+      "path": "automapper.extensions.expressionmapping/4.1.3",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "automapper.extensions.expressionmapping.4.1.3.nupkg.sha512",
+        "automapper.extensions.expressionmapping.nuspec",
+        "lib/net461/AutoMapper.Extensions.ExpressionMapping.dll",
+        "lib/net461/AutoMapper.Extensions.ExpressionMapping.xml",
+        "lib/netstandard2.0/AutoMapper.Extensions.ExpressionMapping.dll",
+        "lib/netstandard2.0/AutoMapper.Extensions.ExpressionMapping.xml"
       ]
     },
     "Azure.Core/1.38.0": {
@@ -4871,6 +4925,30 @@
         "readme.md"
       ]
     },
+    "ReHackt.Queryable.AutoMapperExtensions/1.8.2": {
+      "sha512": "Tt9CiFuwj1o3KB/Dvq0F7Rpp0QjzwkPkgQ3Cj+lAwFK9JRRkOg5KELHbaYGBwav+/9jUviNTihckXBzH5HGtfQ==",
+      "type": "package",
+      "path": "rehackt.queryable.automapperextensions/1.8.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netstandard2.0/ReHackt.Queryable.AutoMapperExtensions.dll",
+        "rehackt.queryable.automapperextensions.1.8.2.nupkg.sha512",
+        "rehackt.queryable.automapperextensions.nuspec"
+      ]
+    },
+    "ReHackt.Queryable.Extensions/1.8.2": {
+      "sha512": "2VxkxtqcJGNrHyVkpuWGBOMS9p7L7obr+1VsoS7sWeaTKQLd0lvQauUmBcV6S13NEgG17H9dmcbK7ZF+GxrhLA==",
+      "type": "package",
+      "path": "rehackt.queryable.extensions/1.8.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netstandard2.0/ReHackt.Queryable.Extensions.dll",
+        "rehackt.queryable.extensions.1.8.2.nupkg.sha512",
+        "rehackt.queryable.extensions.nuspec"
+      ]
+    },
     "System.Buffers/4.6.0": {
       "sha512": "lN6tZi7Q46zFzAbRYXTIvfXcyvQQgxnY7Xm6C6xQ9784dEL1amjM6S6Iw4ZpsvesAKnRVsM4scrDQaDqSClkjA==",
       "type": "package",
@@ -6172,5 +6250,17 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.301/PortableRuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1608",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Detected package version outside of dependency constraint: AutoMapper.Extensions.ExpressionMapping 4.1.3 requires AutoMapper (>= 10.1.1 && < 11.0.0) but version AutoMapper 15.1.3 was resolved.",
+      "libraryId": "AutoMapper",
+      "targetGraphs": [
+        "net9.0"
+      ]
+    }
+  ]
 }

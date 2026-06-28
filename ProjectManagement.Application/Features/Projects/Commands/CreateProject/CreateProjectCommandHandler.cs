@@ -19,7 +19,7 @@
             {
                 Name = request.Name,
                 Description = request.Description,
-                UserId = _currentUser.UserId!   // never trust a UserId from the request body — always derived from JWT
+                UserId = _currentUser.UserId!
             };
 
             await _unitOfWork.Projects.AddAsync(project);

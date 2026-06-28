@@ -4,7 +4,7 @@
     {
         public UpdateTaskStatusCommandValidator()
         {
-            RuleFor(x => x.TaskId).NotEmpty();
+            RuleFor(x => x.TaskId).NotEqual(Guid.Empty);
             RuleFor(x => x.Status).IsInEnum();
         }
     }

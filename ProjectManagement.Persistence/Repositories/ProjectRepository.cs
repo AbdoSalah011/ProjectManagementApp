@@ -5,12 +5,7 @@
         public ProjectRepository(ApplicationDbContext context)
             : base(context) { }
 
-        public async Task<PaginatedList<Project>> GetPagedByUserAsync(
-            Guid userId,
-            bool isAdmin,
-            int pageNumber,
-            int pageSize,
-            CancellationToken ct = default)
+        public IQueryable<Project> GetPagedByUser(Guid userId, bool isAdmin)
         {
             var query = _dbSet.AsNoTracking().AsQueryable();
 
@@ -19,11 +14,7 @@
                 query = query.Where(p => p.UserId == userId);
             }
 
-            return await PaginatedList<Project>.CreatAsync(
-                query,
-                pageNumber,
-                pageSize,
-                ct);
+            return query;
         }
     }
 }

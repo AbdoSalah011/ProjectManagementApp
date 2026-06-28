@@ -6,7 +6,7 @@
         {
             RuleFor(x => x.Title).NotEmpty().MaximumLength(200);
             RuleFor(x => x.Description).MaximumLength(2000);
-            RuleFor(x => x.ProjectId).NotEmpty();
+            RuleFor(x => x.ProjectId).NotEqual(Guid.Empty);
             RuleFor(x => x.Priority).IsInEnum();
             RuleFor(x => x.DueDate)
                 .GreaterThanOrEqualTo(DateTime.UtcNow.Date)

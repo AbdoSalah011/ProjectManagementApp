@@ -13,12 +13,12 @@
 
         public async Task<ProjectDto> Handle(GetProjectByIdQuery request, CancellationToken cancellationToken)
         {
-            var project = await _unitOfWork.Projects.GetByIdAsync(Guid.Parse(request.Id))
+            var project = await _unitOfWork.Projects.GetByIdAsync(request.Id)
                 ?? throw new NotFoundException(nameof(Project), request.Id);
 
             AuthorizationHelper.EnsureCanAccessProject(project, _currentUser.UserId!, _currentUser.IsAdmin);
 
-            return new ProjectDto(project.Id.ToString(), project.Name, project.Description, project.CreatedAt, project.UserId.ToString());
+            return new ProjectDto(project.Id, project.Name, project.Description, project.CreatedAt, project.UserId);
         }
     }
 }

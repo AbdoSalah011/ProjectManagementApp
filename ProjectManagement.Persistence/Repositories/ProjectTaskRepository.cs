@@ -6,21 +6,13 @@
             : base(context) { }
 
 
-        public async Task<PaginatedList<ProjectTask>> GetPagedByProjectAsync(
-            Guid projectId,
-            int pageNumber,
-            int pageSize,
-            CancellationToken ct = default)
+        public IQueryable<ProjectTask> GetPagedByProject(Guid projectId)
         {
             var query = _dbSet
                 .AsNoTracking()
                 .Where(t => t.ProjectId == projectId);
 
-            return await PaginatedList<ProjectTask>.CreatAsync(
-                query,
-                pageNumber,
-                pageSize,
-                ct);
+            return query;
         }
 
     }

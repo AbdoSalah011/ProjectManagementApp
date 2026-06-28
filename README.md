@@ -31,7 +31,7 @@ This was built as a technical assessment for a Backend .NET Developer position. 
 | Validation | FluentValidation (via MediatR pipeline behavior) |
 | Auth | ASP.NET Core Identity, JWT Bearer + Refresh Tokens |
 | API Versioning | Asp.Versioning (URL segment: `/api/v1/...`) |
-| API Docs | Swagger / OpenAPI (with JWT bearer support) |
+| API Docs | Swagger / OpenAPI |
 
 ---
 

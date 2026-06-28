@@ -13,7 +13,7 @@
 
         public async Task<TaskDto> Handle(CreateTaskCommand request, CancellationToken ct)
         {
-            var project = await _unitOfWork.Projects.GetByIdAsync(Guid.Parse(request.ProjectId))
+            var project = await _unitOfWork.Projects.GetByIdAsync(request.ProjectId)
                 ?? throw new NotFoundException(nameof(Project), request.ProjectId);
 
             AuthorizationHelper.EnsureCanAccessProject(project, _currentUser.UserId!, _currentUser.IsAdmin);
@@ -24,13 +24,13 @@
                 Description = request.Description,
                 DueDate = request.DueDate,
                 Priority = request.Priority,
-                ProjectId = Guid.Parse(request.ProjectId)
+                ProjectId = request.ProjectId
             };
 
             await _unitOfWork.ProjectTasks.AddAsync(task, ct);
             await _unitOfWork.SaveChangesAsync(ct);
 
-            return new TaskDto(task.Id.ToString(), task.Title, task.Description, task.Status, task.DueDate, task.Priority, task.ProjectId.ToString());
+            return new TaskDto(task.Id, task.Title, task.Description, task.Status, task.DueDate, task.Priority, task.ProjectId);
         }
     }
 }

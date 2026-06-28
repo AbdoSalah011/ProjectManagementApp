@@ -1,6 +1,6 @@
 ﻿namespace ProjectManagement.Application.Features.Auth.Commands.RefreshToken
 {
-    public class RefreshTokenCommandHandler : IRequestHandler<RefreshTokenCommand, RefreshTokenResponse>
+    public class RefreshTokenCommandHandler : IRequestHandler<RefreshTokenCommand, AuthResponseDto>
     {
         private readonly IUnitOfWork _unitOfWork;
         private readonly UserManager<ApplicationUser> _userManager;
@@ -16,7 +16,7 @@
             _jwtService = jwtService;
         }
 
-        public async Task<RefreshTokenResponse> Handle(RefreshTokenCommand request, CancellationToken ct)
+        public async Task<AuthResponseDto> Handle(RefreshTokenCommand request, CancellationToken ct)
         {
             var existingToken = await _unitOfWork.RefreshTokens.GetByTokenAsync(request.Token);
 
@@ -27,9 +27,6 @@
             if (user is null)
                 throw new NotFoundException(nameof(ApplicationUser), existingToken.UserId);
 
-            // Rotation: revoke the used token, issue a brand new one, chain them via ReplacedByToken.
-            // This limits the blast radius if a refresh token is ever stolen — a stolen-and-reused
-            // token is immediately detectable because it'll already be revoked on the legitimate next use.
             var newRefreshToken = await _jwtService.GenerateRefreshTokenAsync(user.Id, ct);
 
             existingToken.RevokedAt = DateTime.UtcNow;
@@ -42,7 +39,7 @@
 
             await _unitOfWork.SaveChangesAsync(ct);
 
-            return new RefreshTokenResponse(accessToken, newRefreshToken.Token, DateTime.UtcNow.AddMinutes(15));
+            return new AuthResponseDto(accessToken, newRefreshToken.Token, DateTime.UtcNow.AddMinutes(15));
         }
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace ProjectManagement.Application.Features.Auth.Commands.Login
 {
-    public class LoginCommandHandler : IRequestHandler<LoginCommand, LoginResponse>
+    public class LoginCommandHandler : IRequestHandler<LoginCommand, AuthResponseDto>
     {
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly IJwtService _jwtService;
@@ -16,12 +16,10 @@
             _unitOfWork = unitOfWork;
         }
 
-        public async Task<LoginResponse> Handle(LoginCommand request, CancellationToken ct)
+        public async Task<AuthResponseDto> Handle(LoginCommand request, CancellationToken ct)
         {
             var user = await _userManager.FindByEmailAsync(request.Email);
 
-            // Deliberately identical error for "user not found" and "wrong password" —
-            // distinguishing them lets an attacker enumerate which emails are registered.
             if (user is null || !await _userManager.CheckPasswordAsync(user, request.Password))
                 throw new Application.Common.Exceptions.ValidationException(
                     new[] { new ValidationFailure(string.Empty, "Invalid email or password.") });
@@ -34,7 +32,7 @@
             await _unitOfWork.RefreshTokens.AddAsync(refreshToken, ct);
             await _unitOfWork.SaveChangesAsync(ct);
 
-            return new LoginResponse(accessToken, refreshToken.Token, DateTime.UtcNow.AddMinutes(15));
+            return new AuthResponseDto(accessToken, refreshToken.Token, DateTime.UtcNow.AddMinutes(15));
         }
     }
 }

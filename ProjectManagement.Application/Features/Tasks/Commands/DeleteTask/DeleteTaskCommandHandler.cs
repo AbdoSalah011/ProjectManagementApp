@@ -13,7 +13,7 @@
 
         public async Task<Unit> Handle(DeleteTaskCommand request, CancellationToken cancellationToken)
         {
-            var task = await _unitOfWork.ProjectTasks.GetByIdAsync(Guid.Parse(request.TaskId))
+            var task = await _unitOfWork.ProjectTasks.GetByIdAsync(request.TaskId)
                 ?? throw new NotFoundException(nameof(ProjectTask), request.TaskId);
 
             var project = await _unitOfWork.Projects.GetByIdAsync(task.ProjectId, cancellationToken)

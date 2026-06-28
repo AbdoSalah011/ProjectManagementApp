@@ -51,7 +51,7 @@
             "header": [],
             "body": {
               "mode": "raw",
-              "raw": "{\r\n  \"email\": \"ahmedkhalid@gmail.com\",\r\n  \"password\": \"Ahmed@1234\"\r\n}",
+              "raw": "{\r\n  \"email\": \"abdulrahmansalah@gmail.com\",\r\n  \"password\": \"Abdo@407065578\"\r\n}",
               "options": {
                 "raw": {
                   "language": "json"
@@ -79,7 +79,14 @@
           "name": "refreshToken",
           "request": {
             "auth": {
-              "type": "noauth"
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhOGYyM2I4OC02MGRlLTRmMzAtYTE1NC05MjQ0NTJjYTk2ZDMiLCJqdGkiOiJkMmZhOTMwNi04YmY4LTRhOWYtYWMzYy03OTAwMmI4ZWJjODMiLCJleHAiOjE3ODI2MTgyNDcsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL25hbWVpZGVudGlmaWVyIjoiYThmMjNiODgtNjBkZS00ZjMwLWExNTQtOTI0NDUyY2E5NmQzIiwiaHR0cDovL3NjaGVtYXMueG1sc29hcC5vcmcvd3MvMjAwNS8wNS9pZGVudGl0eS9jbGFpbXMvZW1haWxhZGRyZXNzIjoiYWJkdWxyYWhtYW5zYWxhaEBnbWFpbC5jb20iLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJBZG1pbiIsImlzcyI6IlByb2plY3RNYW5hZ2VtZW50QVBJIiwiYXVkIjoiUHJvamVjdE1hbmFnZW1lbnRDbGllbnQifQ.2t7xin8acN1DXQnXwUWa0DldOQ4Cthfao4QxxBgVKQk",
+                  "type": "string"
+                }
+              ]
             },
             "method": "POST",
             "header": [],
@@ -122,16 +129,23 @@
               "bearer": [
                 {
                   "key": "token",
-                  "value": "",
+                  "value": "asCyGopk4lXxiei4D9QkwBAAxOzG3X7VvXii3yem98iFKT+DyM2mUfmaOE829bzuZCit7rCb5MSXpICZ7EkWKA==",
                   "type": "string"
                 }
               ]
             },
             "method": "POST",
-            "header": [],
+            "header": [
+              {
+                "key": "",
+                "value": "",
+                "type": "text",
+                "disabled": true
+              }
+            ],
             "body": {
               "mode": "raw",
-              "raw": "{\r\n  \"name\": \"Mockup Project\",\r\n  \"description\": \"this is the first Project on this website\"\r\n}",
+              "raw": "{\r\n  \"name\": \"Marketing Campaign\",\r\n  \"description\": \"Q3 social media and email marketing push.\"\r\n}",
               "options": {
                 "raw": {
                   "language": "json"
@@ -157,12 +171,18 @@
         {
           "name": "getAllProjects",
           "request": {
-            "method": "POST",
-            "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": "{\r\n  \"name\": \"string\",\r\n  \"description\": \"string\"\r\n}"
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "GCKpELDjSN3ZnEbW/QUIMGslAULF4eUfmpB95jqVMJQulgl/IZEMihDmbwcx5Ld985IiyaClkz7BH1ElmRGnzg==",
+                  "type": "string"
+                }
+              ]
             },
+            "method": "GET",
+            "header": [],
             "url": {
               "raw": "https://localhost:7070/api/v1/projects",
               "protocol": "https",
@@ -185,14 +205,24 @@
             "disableBodyPruning": true
           },
           "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhOGYyM2I4OC02MGRlLTRmMzAtYTE1NC05MjQ0NTJjYTk2ZDMiLCJqdGkiOiJkMmZhOTMwNi04YmY4LTRhOWYtYWMzYy03OTAwMmI4ZWJjODMiLCJleHAiOjE3ODI2MTgyNDcsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL25hbWVpZGVudGlmaWVyIjoiYThmMjNiODgtNjBkZS00ZjMwLWExNTQtOTI0NDUyY2E5NmQzIiwiaHR0cDovL3NjaGVtYXMueG1sc29hcC5vcmcvd3MvMjAwNS8wNS9pZGVudGl0eS9jbGFpbXMvZW1haWxhZGRyZXNzIjoiYWJkdWxyYWhtYW5zYWxhaEBnbWFpbC5jb20iLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJBZG1pbiIsImlzcyI6IlByb2plY3RNYW5hZ2VtZW50QVBJIiwiYXVkIjoiUHJvamVjdE1hbmFnZW1lbnRDbGllbnQifQ.2t7xin8acN1DXQnXwUWa0DldOQ4Cthfao4QxxBgVKQk",
+                  "type": "string"
+                }
+              ]
+            },
             "method": "GET",
             "header": [],
             "body": {
               "mode": "raw",
-              "raw": "{\r\n  \"name\": \"string\",\r\n  \"description\": \"string\"\r\n}"
+              "raw": ""
             },
             "url": {
-              "raw": "https://localhost:7070/api/v1/projects",
+              "raw": "https://localhost:7070/api/v1/projects/:id",
               "protocol": "https",
               "host": [
                 "localhost"
@@ -201,7 +231,14 @@
               "path": [
                 "api",
                 "v1",
-                "projects"
+                "projects",
+                ":id"
+              ],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": ""
+                }
               ]
             }
           },
@@ -210,14 +247,29 @@
         {
           "name": "updateProject",
           "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhOGYyM2I4OC02MGRlLTRmMzAtYTE1NC05MjQ0NTJjYTk2ZDMiLCJqdGkiOiJkMmZhOTMwNi04YmY4LTRhOWYtYWMzYy03OTAwMmI4ZWJjODMiLCJleHAiOjE3ODI2MTgyNDcsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL25hbWVpZGVudGlmaWVyIjoiYThmMjNiODgtNjBkZS00ZjMwLWExNTQtOTI0NDUyY2E5NmQzIiwiaHR0cDovL3NjaGVtYXMueG1sc29hcC5vcmcvd3MvMjAwNS8wNS9pZGVudGl0eS9jbGFpbXMvZW1haWxhZGRyZXNzIjoiYWJkdWxyYWhtYW5zYWxhaEBnbWFpbC5jb20iLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJBZG1pbiIsImlzcyI6IlByb2plY3RNYW5hZ2VtZW50QVBJIiwiYXVkIjoiUHJvamVjdE1hbmFnZW1lbnRDbGllbnQifQ.2t7xin8acN1DXQnXwUWa0DldOQ4Cthfao4QxxBgVKQk",
+                  "type": "string"
+                }
+              ]
+            },
             "method": "PUT",
             "header": [],
             "body": {
               "mode": "raw",
-              "raw": "{\r\n  \"name\": \"string\",\r\n  \"description\": \"string\"\r\n}"
+              "raw": "{\r\n  \"id\" : \"93224FC6-B333-4FE7-8545-93079F9E19E6\",\r\n  \"name\": \"Mobile App\",\r\n  \"description\": \"Develop the iOS and Android companion app.\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
             },
             "url": {
-              "raw": "https://localhost:7070/api/v1/projects?id",
+              "raw": "https://localhost:7070/api/v1/projects/:id",
               "protocol": "https",
               "host": [
                 "localhost"
@@ -226,13 +278,13 @@
               "path": [
                 "api",
                 "v1",
-                "projects"
+                "projects",
+                ":id"
               ],
-              "query": [
+              "variable": [
                 {
                   "key": "id",
-                  "value": null,
-                  "type": "text"
+                  "value": ""
                 }
               ]
             }
@@ -242,14 +294,24 @@
         {
           "name": "deleteProject",
           "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhOGYyM2I4OC02MGRlLTRmMzAtYTE1NC05MjQ0NTJjYTk2ZDMiLCJqdGkiOiJkMmZhOTMwNi04YmY4LTRhOWYtYWMzYy03OTAwMmI4ZWJjODMiLCJleHAiOjE3ODI2MTgyNDcsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL25hbWVpZGVudGlmaWVyIjoiYThmMjNiODgtNjBkZS00ZjMwLWExNTQtOTI0NDUyY2E5NmQzIiwiaHR0cDovL3NjaGVtYXMueG1sc29hcC5vcmcvd3MvMjAwNS8wNS9pZGVudGl0eS9jbGFpbXMvZW1haWxhZGRyZXNzIjoiYWJkdWxyYWhtYW5zYWxhaEBnbWFpbC5jb20iLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJBZG1pbiIsImlzcyI6IlByb2plY3RNYW5hZ2VtZW50QVBJIiwiYXVkIjoiUHJvamVjdE1hbmFnZW1lbnRDbGllbnQifQ.2t7xin8acN1DXQnXwUWa0DldOQ4Cthfao4QxxBgVKQk",
+                  "type": "string"
+                }
+              ]
+            },
             "method": "DELETE",
             "header": [],
             "body": {
               "mode": "raw",
-              "raw": "{\r\n  \"name\": \"string\",\r\n  \"description\": \"string\"\r\n}"
+              "raw": ""
             },
             "url": {
-              "raw": "https://localhost:7070/api/v1/projects?id",
+              "raw": "https://localhost:7070/api/v1/projects/:id",
               "protocol": "https",
               "host": [
                 "localhost"
@@ -258,13 +320,13 @@
               "path": [
                 "api",
                 "v1",
-                "projects"
+                "projects",
+                ":id"
               ],
-              "query": [
+              "variable": [
                 {
                   "key": "id",
-                  "value": null,
-                  "type": "text"
+                  "value": ""
                 }
               ]
             }
@@ -279,11 +341,21 @@
         {
           "name": "createTask",
           "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhOGYyM2I4OC02MGRlLTRmMzAtYTE1NC05MjQ0NTJjYTk2ZDMiLCJqdGkiOiJkMmZhOTMwNi04YmY4LTRhOWYtYWMzYy03OTAwMmI4ZWJjODMiLCJleHAiOjE3ODI2MTgyNDcsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL25hbWVpZGVudGlmaWVyIjoiYThmMjNiODgtNjBkZS00ZjMwLWExNTQtOTI0NDUyY2E5NmQzIiwiaHR0cDovL3NjaGVtYXMueG1sc29hcC5vcmcvd3MvMjAwNS8wNS9pZGVudGl0eS9jbGFpbXMvZW1haWxhZGRyZXNzIjoiYWJkdWxyYWhtYW5zYWxhaEBnbWFpbC5jb20iLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJBZG1pbiIsImlzcyI6IlByb2plY3RNYW5hZ2VtZW50QVBJIiwiYXVkIjoiUHJvamVjdE1hbmFnZW1lbnRDbGllbnQifQ.2t7xin8acN1DXQnXwUWa0DldOQ4Cthfao4QxxBgVKQk",
+                  "type": "string"
+                }
+              ]
+            },
             "method": "POST",
             "header": [],
             "body": {
               "mode": "raw",
-              "raw": "{\r\n  \"title\": \"string\",\r\n  \"description\": \"string\",\r\n  \"dueDate\": \"2026-06-27T10:26:49.043Z\",\r\n  \"priority\": 1,\r\n  \"projectId\": \"string\"\r\n}",
+              "raw": "{\r\n  \"title\": \"Setup Database Schema\",\r\n  \"description\": \"Design tables and relationships for the core architecture.\",\r\n  \"dueDate\": \"2026-06-28T10:26:49.043Z\",\r\n  \"priority\": 1,\r\n  \"projectId\": \"4DB2A78E-35FB-423F-B142-A335196D171A\"\r\n}",
               "options": {
                 "raw": {
                   "language": "json"
@@ -310,13 +382,19 @@
           "name": "updateTaskStatus",
           "request": {
             "method": "PATCH",
-            "header": [],
+            "header": [
+              {
+                "key": "status",
+                "value": "3",
+                "type": "text"
+              }
+            ],
             "body": {
               "mode": "raw",
-              "raw": "{\r\n  \"name\": \"string\",\r\n  \"description\": \"string\"\r\n}"
+              "raw": ""
             },
             "url": {
-              "raw": "https://localhost:7070/api/v1/tasks/id/status?status",
+              "raw": "https://localhost:7070/api/v1/tasks/:id/status",
               "protocol": "https",
               "host": [
                 "localhost"
@@ -326,14 +404,13 @@
                 "api",
                 "v1",
                 "tasks",
-                "id",
+                ":id",
                 "status"
               ],
-              "query": [
+              "variable": [
                 {
-                  "key": "status",
-                  "value": null,
-                  "type": "text"
+                  "key": "id",
+                  "value": "7AD15F6F-0D19-4F9A-8E32-E7F94AA0A640"
                 }
               ]
             }
@@ -346,6 +423,16 @@
             "disableBodyPruning": true
           },
           "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhOGYyM2I4OC02MGRlLTRmMzAtYTE1NC05MjQ0NTJjYTk2ZDMiLCJqdGkiOiJkMmZhOTMwNi04YmY4LTRhOWYtYWMzYy03OTAwMmI4ZWJjODMiLCJleHAiOjE3ODI2MTgyNDcsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL25hbWVpZGVudGlmaWVyIjoiYThmMjNiODgtNjBkZS00ZjMwLWExNTQtOTI0NDUyY2E5NmQzIiwiaHR0cDovL3NjaGVtYXMueG1sc29hcC5vcmcvd3MvMjAwNS8wNS9pZGVudGl0eS9jbGFpbXMvZW1haWxhZGRyZXNzIjoiYWJkdWxyYWhtYW5zYWxhaEBnbWFpbC5jb20iLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJBZG1pbiIsImlzcyI6IlByb2plY3RNYW5hZ2VtZW50QVBJIiwiYXVkIjoiUHJvamVjdE1hbmFnZW1lbnRDbGllbnQifQ.2t7xin8acN1DXQnXwUWa0DldOQ4Cthfao4QxxBgVKQk",
+                  "type": "string"
+                }
+              ]
+            },
             "method": "GET",
             "header": [],
             "body": {
@@ -358,7 +445,7 @@
               }
             },
             "url": {
-              "raw": "https://localhost:7070/api/v1/tasks/by-project/{projectId}?pageNumber&pageSize",
+              "raw": "https://localhost:7070/api/v1/tasks/by-project/:projectId?pageNumber=1&pageSize=10",
               "protocol": "https",
               "host": [
                 "localhost"
@@ -369,16 +456,22 @@
                 "v1",
                 "tasks",
                 "by-project",
-                "{projectId}"
+                ":projectId"
               ],
               "query": [
                 {
                   "key": "pageNumber",
-                  "value": null
+                  "value": "1"
                 },
                 {
                   "key": "pageSize",
-                  "value": null
+                  "value": "10"
+                }
+              ],
+              "variable": [
+                {
+                  "key": "projectId",
+                  "value": "4DB2A78E-35FB-423F-B142-A335196D171A"
                 }
               ]
             }
@@ -388,6 +481,16 @@
         {
           "name": "deleteTask",
           "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhOGYyM2I4OC02MGRlLTRmMzAtYTE1NC05MjQ0NTJjYTk2ZDMiLCJqdGkiOiJkMmZhOTMwNi04YmY4LTRhOWYtYWMzYy03OTAwMmI4ZWJjODMiLCJleHAiOjE3ODI2MTgyNDcsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL25hbWVpZGVudGlmaWVyIjoiYThmMjNiODgtNjBkZS00ZjMwLWExNTQtOTI0NDUyY2E5NmQzIiwiaHR0cDovL3NjaGVtYXMueG1sc29hcC5vcmcvd3MvMjAwNS8wNS9pZGVudGl0eS9jbGFpbXMvZW1haWxhZGRyZXNzIjoiYWJkdWxyYWhtYW5zYWxhaEBnbWFpbC5jb20iLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJBZG1pbiIsImlzcyI6IlByb2plY3RNYW5hZ2VtZW50QVBJIiwiYXVkIjoiUHJvamVjdE1hbmFnZW1lbnRDbGllbnQifQ.2t7xin8acN1DXQnXwUWa0DldOQ4Cthfao4QxxBgVKQk",
+                  "type": "string"
+                }
+              ]
+            },
             "method": "DELETE",
             "header": [],
             "body": {
@@ -395,7 +498,7 @@
               "raw": "{\r\n  \"name\": \"string\",\r\n  \"description\": \"string\"\r\n}"
             },
             "url": {
-              "raw": "https://localhost:7070/api/v1/tasks/?id",
+              "raw": "https://localhost:7070/api/v1/tasks/:id",
               "protocol": "https",
               "host": [
                 "localhost"
@@ -405,13 +508,12 @@
                 "api",
                 "v1",
                 "tasks",
-                ""
+                ":id"
               ],
-              "query": [
+              "variable": [
                 {
                   "key": "id",
-                  "value": null,
-                  "type": "text"
+                  "value": "7AD15F6F-0D19-4F9A-8E32-E7F94AA0A640"
                 }
               ]
             }

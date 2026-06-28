@@ -16,6 +16,7 @@
     <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="9.5.4" />
     <PackageReference Include="MediatR" Version="12.1.1" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="9.0.17" />
+    <PackageReference Include="ReHackt.Queryable.AutoMapperExtensions" Version="1.8.2" />
   </ItemGroup>
 
 </Project>

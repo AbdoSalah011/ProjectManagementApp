@@ -15,11 +15,11 @@
 
         public async Task<PaginatedList<ProjectDto>> Handle(GetAllProjectsQuery request, CancellationToken ct)
         {
-            var paged = await _unitOfWork.Projects.GetPagedByUserAsync(_currentUser.UserId!, _currentUser.IsAdmin, request.PageNumber, request.PageSize);
+            var paged = _unitOfWork.Projects.GetPagedByUser(_currentUser.UserId!, _currentUser.IsAdmin);
 
-            var dtos = _mapper.Map<List<ProjectDto>>(paged.Items).AsQueryable();
+            var dtos = _mapper.ProjectTo<ProjectDto>(paged);
 
-            return await PaginatedList<ProjectDto>.CreatAsync(dtos, paged.PageNumber, paged.PageSize, ct);
+            return await PaginatedList<ProjectDto>.CreatAsync(dtos, request.PageNumber, request.PageSize, ct);
         }
     }
 }

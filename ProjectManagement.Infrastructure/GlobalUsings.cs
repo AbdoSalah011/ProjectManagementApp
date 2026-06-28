@@ -8,6 +8,7 @@ global using Microsoft.IdentityModel.Tokens;
 global using ProjectManagement.Application.Common.Interfaces;
 global using ProjectManagement.Domain.Entities;
 global using ProjectManagement.Infrastructure.Auth;
+global using ProjectManagement.Infrastructure.Services;
 global using System.IdentityModel.Tokens.Jwt;
 global using System.Security.Claims;
 global using System.Security.Cryptography;

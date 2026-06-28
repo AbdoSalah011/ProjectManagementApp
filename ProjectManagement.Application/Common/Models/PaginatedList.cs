@@ -19,7 +19,7 @@
         {
             Items = items;
             PageNumber = pageNumber;
-            PageSize = PageSize;
+            PageSize = pageSize;
             TotalCount = totalCount;
             TotalPages = (int)Math.Ceiling(totalCount / (double)pageSize);
         }

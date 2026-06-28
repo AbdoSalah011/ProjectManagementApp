@@ -13,7 +13,7 @@
         }
 
         [HttpGet("by-project/{projectId}")]
-        public async Task<IActionResult> GetByProject(string projectId, [FromQuery] int pageNumber = 1, [FromQuery] int pageSize = 10)
+        public async Task<IActionResult> GetByProject(Guid projectId, [FromQuery] int pageNumber = 1, [FromQuery] int pageSize = 10)
         {
             var query = new GetTasksByProjectQuery { ProjectId = projectId, PageNumber = pageNumber, PageSize = pageSize };
             var result = await Mediator.Send(query);
@@ -21,7 +21,7 @@
         }
 
         [HttpPatch("{taskId}/status")]
-        public async Task<IActionResult> UpdateStatus(string taskId, UpdateTaskStatusCommand command)
+        public async Task<IActionResult> UpdateStatus(Guid taskId, UpdateTaskStatusCommand command)
         {
             if (taskId != command.TaskId)
                 return BadRequest("Route id and body id do not match.");
@@ -31,7 +31,7 @@
         }
 
         [HttpDelete("{taskId}")]
-        public async Task<IActionResult> Delete(string taskId)
+        public async Task<IActionResult> Delete(Guid taskId)
         {
             await Mediator.Send(new DeleteTaskCommand(taskId));
             return HandleResult<object?>(null, "Task deleted.");

@@ -1,11 +1,11 @@
 ﻿namespace ProjectManagement.Application.Features.Tasks.DTOs
 {
     public record TaskDto(
-        string Id,
+        Guid Id,
         string Title,
         string? Description,
         ProjectTaskStatus Status,
         DateTime? DueDate,
         TaskPriority Priority,
-        string ProjectId);
+        Guid ProjectId);
 }

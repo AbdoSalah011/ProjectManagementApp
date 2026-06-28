@@ -26,10 +26,11 @@
 
             var claims = new List<System.Security.Claims.Claim>
             {
-                new(JwtRegisteredClaimNames.Sub, user.UserName!),
+                new(JwtRegisteredClaimNames.Sub, user.Id.ToString()),
                 new(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
                 new(JwtRegisteredClaimNames.Exp, _jwtSettings.ExpiryMinutes.ToString()),
-                new("Uid", user.Id.ToString())
+                new(ClaimTypes.NameIdentifier, user.Id.ToString()),
+                new(ClaimTypes.Email, user.Email!)
             }
             .Union(userClaims)
             .Union(roleClaims);

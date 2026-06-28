@@ -54,7 +54,6 @@
                     ApiResponse<object>.Failure(errors: null, message: "An unexpected error occurred."))
             };
 
-            // Full details logged server-side only — never leaked in the response body.
             if (statusCode == HttpStatusCode.InternalServerError)
                 _logger.LogError(exception, "Unhandled exception occurred.");
             else
