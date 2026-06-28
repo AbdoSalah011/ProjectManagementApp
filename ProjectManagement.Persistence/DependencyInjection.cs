@@ -6,6 +6,9 @@
             this IServiceCollection services,
             IConfiguration configuration)
         {
+            // Register AuditInterceptor
+            services.AddSingleton<IInterceptor, AuditInterceptor>();
+
             // Configure Application DbContext
             services.AddDbContextPool<ApplicationDbContext>(
                 (sp, options) =>

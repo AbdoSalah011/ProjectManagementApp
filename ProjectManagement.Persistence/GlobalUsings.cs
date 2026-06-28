@@ -8,13 +8,12 @@ global using Microsoft.EntityFrameworkCore.Storage;
 global using Microsoft.Extensions.Configuration;
 global using Microsoft.Extensions.DependencyInjection;
 global using ProjectManagement.Application.Common.Interfaces;
-global using ProjectManagement.Application.Common.Models;
 global using ProjectManagement.Domain.Common;
 global using ProjectManagement.Domain.Constants;
 global using ProjectManagement.Domain.Entities;
 global using ProjectManagement.Domain.Enums;
 global using ProjectManagement.Persistence.Configurations;
 global using ProjectManagement.Persistence.Context;
+global using ProjectManagement.Persistence.Interceptors;
 global using ProjectManagement.Persistence.Repositories;
 global using ProjectManagement.Persistence.Seed;
-

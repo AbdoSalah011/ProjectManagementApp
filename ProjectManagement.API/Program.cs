@@ -48,6 +48,10 @@ namespace ProjectManagement.API
                 seeder.Seed();
             }
 
+
+
+            app.UseMiddleware<ExceptionHandlingMiddleware>();
+
             // Configure the HTTP request pipeline.
             if (app.Environment.IsDevelopment())
             {
@@ -56,7 +60,6 @@ namespace ProjectManagement.API
                 app.UseSwaggerUI();
             }
 
-            app.UseMiddleware<ExceptionHandlingMiddleware>();
 
             app.UseHttpsRedirection();
 
@@ -64,9 +67,7 @@ namespace ProjectManagement.API
 
             app.UseAuthorization();
 
-
             app.MapControllers();
-
 
 
 
